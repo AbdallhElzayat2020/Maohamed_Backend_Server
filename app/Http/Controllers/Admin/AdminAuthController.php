@@ -38,8 +38,6 @@ class AdminAuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('admin.login');
-//            toast('Your have been logout successfully!' , 'success');
-
 
     }
 

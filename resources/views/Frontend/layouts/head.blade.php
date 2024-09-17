@@ -53,7 +53,6 @@
 </script>
 <!-- End Snap Pixel Code -->
 
-<<<<<<< HEAD
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11363655661"></script>
     <script>
@@ -76,8 +75,6 @@
     </script>
 
 
-=======
->>>>>>> 396c67c4b87d15dc7d3bc66732c82d82c31507f2
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/assets/css/bootstrap.rtl.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/frontend/assets/css/owl.carousel.min.css') }}">
