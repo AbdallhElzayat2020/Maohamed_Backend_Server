@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Company;
 use App\Models\Admin\Gallery;
+use App\Models\Admin\InfoLandOne;
 use App\Models\Admin\Service;
 use App\Models\Admin\Testimonial;
-use Illuminate\Http\Request;
+use App\Models\ProblemsLandOne;
+use App\Models\Subscribtion;
 
 class LandPage_3Controller extends Controller
 {
@@ -21,11 +23,19 @@ class LandPage_3Controller extends Controller
 
         $testimonials = Testimonial::take(8)->get();
 
+        $info = InfoLandOne::first();
+        $problems = ProblemsLandOne::all();
+        $features = ProblemsLandOne::all();
+        $subscribes = Subscribtion::all();
         return view('Frontend.landpages.landpage_3', compact(
             'testimonials',
             'companies',
             'services',
-            'galleries'
+            'galleries',
+            'info',
+            'problems',
+            'features',
+            'subscribes',
         ));
     }
 }

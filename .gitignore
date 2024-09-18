@@ -4,11 +4,8 @@
 /public/hot
 # /public/storage
 # /storage/*.key
-<<<<<<< HEAD
 # /vendor
-=======
-/vendor
->>>>>>> 396c67c4b87d15dc7d3bc66732c82d82c31507f2
+vendor
 # .env
 .env.backup
 .env.production

@@ -11,10 +11,10 @@
     <div class="text-top mt-5">
         <div class="container">
             <h2 style="line-height: 1.5" class="text-white  text-center">
-                النجاح في مواقع التواصل يحتاج الى خطة
+                {{ $info->title }}
             </h2>
             <h2 style="line-height: 1.5" class="text-white  text-center">
-                احصل على خطة محتوى للشهر .... مقابل 0 فقط
+                {{ $info->sub_title }} مقابل {{ $info->price }} فقط
             </h2>
         </div>
     </div>
@@ -23,17 +23,23 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="content d-flex align-items-center justify-content-center">
-                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
+                        {{-- <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
                             src="https://www.youtube.com/embed/b2q5yBL4XYI?si=RLHs2LCXE8_e77It"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe> --}}
+
+                        <iframe width="100%" height="700" src="https://www.youtube.com/embed/{{ $info->video_url }}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
                         </iframe>
                     </div>
                     <div class="info d-flex align-items-center justify-content-center">
                         <div class="text text-center mt-3">
                             <p class="text-center" style="font-size: 18px">
-                                استثمر في مشروعك مقابل 4 فقط
+                                استثمر في مشروعك مقابل {{ $info->price }} فقط
                             </p>
                         </div>
                     </div>
@@ -76,43 +82,21 @@
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+                        @foreach ($problems as $problem)
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark  d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $problem->title }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <p class="text-center text-white mt-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, repellat, unde? A, esse eum eveniet
-                fugit
-                molestiae placeat praesentium repellendus? Beatae consectetur dolor eaque molestias nihil porro quidem
-                vel
-                voluptatem!
-            </p>
         </div>
     </div>
     <div class="features mt-5">
@@ -124,33 +108,18 @@
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+                        @foreach ($features as $feature)
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark  d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
+
                     </ul>
                 </div>
                 <div class="col-lg-6 mt-3">
@@ -216,87 +185,116 @@
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center  justify-content-center">
+                        <li class="d-flex align-items-center justify-content-center">
                             <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center text-center d-block "
+                                class="text-decoration-none text-dark d-flex align-items-center text-center d-block"
                                 style="list-style: none; font-size: 25px;">
                                 قبل
                             </a>
                         </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger"
-                                style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger"
-                                style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger"
-                                style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+
+                        @foreach ($subscribes as $subscribe)
+                            <!-- عرض كل عنوان قبل الاشتراك -->
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title1_before }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title2_before }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title3_before }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title4_before }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
+
+
 
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center  justify-content-center">
+                        <li class="d-flex align-items-center justify-content-center">
                             <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center text-center d-block "
+                                class="text-decoration-none text-dark d-flex align-items-center text-center d-block"
                                 style="list-style: none; font-size: 25px;">
                                 بعد
                             </a>
                         </li>
 
-
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+                        @foreach ($subscribes as $subscribe)
+                            <!-- عرض كل عنوان بعد الاشتراك -->
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title1_after }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title2_after }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title3_after }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $subscribe->title4_after }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
+
+
             </div>
         </div>
     </div>
