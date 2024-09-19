@@ -65,6 +65,14 @@
                     <li><a class="nav-link" href="{{ route('admin.subscribe.index') }}">subscription</a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Landpage2</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.info-2.index') }}">Information</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.subscribe-2.index') }}">subscription</a></li>
+                </ul>
+            </li>
 
         </ul>
     </aside>

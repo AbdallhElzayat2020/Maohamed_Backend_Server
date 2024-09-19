@@ -7,6 +7,8 @@ use App\Models\Admin\Company;
 use App\Models\Admin\Gallery;
 use App\Models\Admin\Service;
 use App\Models\Admin\Testimonial;
+use App\Models\InfoLandTwo;
+use App\Models\subscribtionLand2;
 use Illuminate\Http\Request;
 
 class LandPage_2Controller extends Controller
@@ -19,12 +21,19 @@ class LandPage_2Controller extends Controller
 
         $companies = Company::take(5)->get();
 
+        $subscribes = subscribtionLand2::all();
+
+        $info = InfoLandTwo::first();
+
         $testimonials = Testimonial::take(8)->get();
 
         return view('Frontend.landpages.landpage_2', compact(
             'testimonials',
             'companies',
             'services',
-            'galleries'));
+            'galleries',
+            'subscribes',
+            'info',
+        ));
     }
 }

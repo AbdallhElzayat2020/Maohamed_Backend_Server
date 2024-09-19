@@ -6,10 +6,12 @@ use App\Http\Controllers\Admin\AdminCourseController;
 use App\Http\Controllers\Admin\AdminFeaturesLand1Controller;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminInfoLand1Controller;
+use App\Http\Controllers\Admin\AdminInfoLand2Controller;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminProblemsLand1Controller;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminSubscribeLand1;
+use App\Http\Controllers\Admin\AdminSubscribeLand2Controller;
 use App\Http\Controllers\Admin\BannerHomeController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -65,7 +67,7 @@ Route::group(
 
         Route::resource('products', AdminProductController::class);
 
-        // landpages routes
+        // landpage1 Routes
         Route::resource('info-1', AdminInfoLand1Controller::class);
 
         Route::resource('problems', AdminProblemsLand1Controller::class);
@@ -75,6 +77,10 @@ Route::group(
         Route::resource('subscribe', AdminSubscribeLand1::class);
 
 
+        // landpage2 Routes
+        Route::resource('info-2', AdminInfoLand2Controller::class);
+
+        Route::resource('subscribe-2', AdminSubscribeLand2Controller::class);
 
 
 
@@ -82,7 +88,6 @@ Route::group(
 
 
         //    create Video
-        //    Route::get('videos/create', [VideoController::class, 'create'])->name('videos.create'); // create Videos
         Route::get('courses/{course}/videos/create', [VideoController::class, 'createForCourse'])->name('videos.createForCourse');
 
         //    store video
@@ -93,12 +98,5 @@ Route::group(
         Route::delete('videos/{video}', [VideoController::class, 'destroy'])->name('videos.destroy'); // delete videos from database
         Route::get('videos/{video}/edit', [VideoController::class, 'edit'])->name('videos.edit'); // EDIT video Data
         Route::put('videos/{video}', [VideoController::class, 'update'])->name('videos.update'); // Update Video Data into database
-
-
-        //    Route::get('dashboard/videos/create', [VideoController::class, 'create'])->name('videos.create');
-        //    Route::post('dashboard/videos', [VideoController::class, 'store'])->name('videos.store');
-
-        // Route for fetching videos of a specific course
-        //    Route::get('dashboard/courses/{course}/videos', [VideoController::class, 'getCourseVideos']);
     }
 );
