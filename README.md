@@ -26,6 +26,7 @@ land 3 [
 ]
 
 landTwo [
+    
 info_land_twos
 
 
@@ -36,4 +37,10 @@ info_land_twos
       قبل الاشتراك وبعد الاشتراك
 
       subscription [1-after , 2-after , 3-after || 1-before , 2-before , 3-before]
+]
+
+LandTwo [ 
+
+    info_land_twos 
+
 ]

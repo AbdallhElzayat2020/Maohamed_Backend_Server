@@ -59,9 +59,9 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Landpage1</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('admin.problems.index') }}">Problems</a></li>
                     <li><a class="nav-link" href="{{ route('admin.info-1.index') }}">Information</a></li>
                     <li><a class="nav-link" href="{{ route('admin.features.index') }}">Features</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.problems.index') }}">Problems</a></li>
                     <li><a class="nav-link" href="{{ route('admin.subscribe.index') }}">subscription</a></li>
                 </ul>
             </li>
@@ -73,7 +73,15 @@
                     <li><a class="nav-link" href="{{ route('admin.subscribe-2.index') }}">subscription</a></li>
                 </ul>
             </li>
-
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Landpage3</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.info-3.index') }}">Information</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.features-3.index') }}">Features</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.problems-3.index') }}">Problems</a></li>
+                </ul>
+            </li>
         </ul>
     </aside>
 </div>

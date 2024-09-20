@@ -113,7 +113,7 @@
                                 <a href="javascript:void(0)"
                                     class="text-decoration-none text-dark  d-flex align-items-center"
                                     style="list-style: none; font-size: 18px;">
-                                    المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
+                                    {{ $feature->title }}
                                 </a>
                                 <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
                                 </i>

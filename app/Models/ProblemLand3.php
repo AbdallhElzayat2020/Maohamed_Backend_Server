@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeatureLandOne extends Model
+class ProblemLand3 extends Model
 {
     use HasFactory;
-    protected $table = 'feature_land_ones';
-    protected $fillable = [
-        'title'
-    ];
+    protected $table = 'problem_land3s';
+    protected $fillable = ['title'];
 
 }

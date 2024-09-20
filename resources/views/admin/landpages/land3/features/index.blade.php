@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
-@section('title_dashboard', 'features Page 3')
+@section('title_dashboard', 'features Page')
 @section('content')
     <div class="main-content">
         <div class="section">
             <div class="section-header">
-                <h1>features Landing features Page 3</h1>
+                <h1>features Landing Page 3</h1>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -23,7 +23,7 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">#ID</th>
-                                            <th>عنوان الميزة</th>
+                                            <th>عنوان المشكلة</th>
                                             <th>تاريخ الاضافة</th>
                                             <th>صلاحيات</th>
                                         </tr>

@@ -10,30 +10,30 @@
 
 <body style="background-color: var(--primaryColor); margin-top: 20px">
     <div class="text-top mt-5">
-        <h2 class="text-white  text-center">
-            هل ترغب في النجاح في مواقع التواصل الاجتماعي ؟
-        </h2>
-        <h2 class="text-white mt-5 text-center">
-            تعلم ذلك بطريقة احترافية ومدروسة في كورس صناعة المحتوى
-        </h2>
+        <div class="container">
+            <h2 style="line-height: 1.5" class="text-white  text-center">
+                {{ $info->title }}
+            </h2>
+            <h2 style="line-height: 1.5" class="text-white  text-center">
+                {{ $info->sub_title }}
+            </h2>
+        </div>
     </div>
     <div class="iframe mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="content d-flex align-items-center justify-content-center">
-                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
-                            src="https://www.youtube.com/embed/b2q5yBL4XYI?si=RLHs2LCXE8_e77It"
+                        <iframe width="100%" height="700" src="https://www.youtube.com/embed/{{ $info->video_url }}"
                             title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
                         </iframe>
                     </div>
                     <div class="info d-flex align-items-center justify-content-center">
                         <div class="text text-center mt-3">
-                            <p class="text-center" style="font-size: 18px">شاهد الفيديو بالكامل لكي تتعرف على تفاصيل
-                                الكورس</p>
-                            <a href="{{ route('courses') }}" class="btn btn-primary px-5">احجز مقعد الان معنا</a>
+                            <p class="text-center" style="font-size: 18px">{{ $info->description }}</p>
+                            <a href="{{ route('contact') }}" class="btn btn-primary px-5">احجز مقعد الان معنا</a>
                         </div>
                     </div>
                 </div>
@@ -56,43 +56,22 @@
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-circle-xmark text-danger" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+                        {{-- @dd($problems) --}}
+                        @foreach ($problems as $problem)
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark  d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $problem->title }}
+                                </a>
+                                <i class="fa-solid fa-circle-xmark text-danger"
+                                    style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <p class="text-center text-white mt-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, repellat, unde? A, esse eum eveniet
-                fugit
-                molestiae placeat praesentium repellendus? Beatae consectetur dolor eaque molestias nihil porro quidem
-                vel
-                voluptatem!
-            </p>
         </div>
     </div>
     <div class="features mt-5">
@@ -104,33 +83,18 @@
                 <div class="col-lg-6 mt-3 d-flex align-items-center">
                     <ul
                         style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;">
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
-                        <li class="d-flex align-items-center mt-5 justify-content-between">
-                            <a href="javascript:void(0)"
-                                class="text-decoration-none text-dark  d-flex align-items-center"
-                                style="list-style: none; font-size: 18px;">
-                                المشكلة المشكلة المشكلة المشكلةالمشكلة المشكلةالمشكلة المشكلة 1
-                            </a>
-                            <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
-                            </i>
-                        </li>
+                        @foreach ($features as $feature)
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark  d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $feature->title }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
+
                     </ul>
                 </div>
                 <div class="col-lg-6 mt-3">
@@ -216,32 +180,21 @@
             <h2 class="text-center text-white">ماذا الذي ستحصل عليه من الكورس</h2>
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-lg-12 d-flex align-items-center justify-content-center">
-                    <div class="text">
-                        <p class="text-center text-white mt-4">
-                            1- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias asperiores
-                            et
-                            excepturi
-                            hic id, impedit iste itaque maxime molestias numquam, obcaecati officia qui quod rem totam
-                            ullam.
-                            Animi.
-                        </p>
-                        <p class="text-center text-white mt-4">
-                            2- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias asperiores
-                            et
-                            excepturi
-                            hic id, impedit iste itaque maxime molestias numquam, obcaecati officia qui quod rem totam
-                            ullam.
-                            Animi.
-                        </p>
-                        <p class="text-center text-white mt-4">
-                            3- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias asperiores
-                            et
-                            excepturi
-                            hic id, impedit iste itaque maxime molestias numquam, obcaecati officia qui quod rem totam
-                            ullam.
-                            Animi.
-                        </p>
-                    </div>
+                    <ul
+                        style="background-color: #ddd;width: 100%; padding: 20px; text-align: right; list-style: none; border-radius: 8px;"
+                        >
+                        @foreach ($features as $feature)
+                            <li class="d-flex align-items-center mt-5 justify-content-between">
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none text-dark  d-flex align-items-center"
+                                    style="list-style: none; font-size: 18px;">
+                                    {{ $feature->title }}
+                                </a>
+                                <i class="fa-solid fa-check text-success" style="font-size: 18px; margin-left: 10px;">
+                                </i>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

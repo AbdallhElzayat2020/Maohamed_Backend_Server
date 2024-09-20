@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminCourseController;
+use App\Http\Controllers\Admin\AdminFeatureLand3Controller;
 use App\Http\Controllers\Admin\AdminFeaturesLand1Controller;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminInfoLand1Controller;
@@ -15,11 +16,15 @@ use App\Http\Controllers\Admin\AdminSubscribeLand2Controller;
 use App\Http\Controllers\Admin\BannerHomeController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\InfoLand3Controller;
+use App\Http\Controllers\Admin\ProblemLand3Controller;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\FeatureLand3Controller;
+use App\Models\ProblemLand3;
 use Illuminate\Support\Facades\Route;
 
 
@@ -83,6 +88,12 @@ Route::group(
         Route::resource('subscribe-2', AdminSubscribeLand2Controller::class);
 
 
+        // landpage3 Routes
+        Route::resource('info-3', InfoLand3Controller::class);
+
+        Route::resource('problems-3', ProblemLand3Controller::class);
+
+        Route::resource('features-3', AdminFeatureLand3Controller::class);
 
 
 

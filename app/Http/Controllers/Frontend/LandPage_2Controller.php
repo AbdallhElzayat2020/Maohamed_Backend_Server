@@ -9,7 +9,6 @@ use App\Models\Admin\Service;
 use App\Models\Admin\Testimonial;
 use App\Models\InfoLandTwo;
 use App\Models\subscribtionLand2;
-use Illuminate\Http\Request;
 
 class LandPage_2Controller extends Controller
 {

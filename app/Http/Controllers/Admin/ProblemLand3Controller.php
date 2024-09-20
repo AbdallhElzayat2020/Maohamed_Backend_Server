@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\FeatureLandOne;
+use App\Models\ProblemLand3;
 use Illuminate\Http\Request;
 
-class AdminFeaturesLand1Controller extends Controller
+class ProblemLand3Controller extends Controller
 {
-
     /**
      * Display a listing of the resource.
      */
-
     public function index()
     {
-        $features = FeatureLandOne::all();
-        return view("admin.landpages.land1.features.index", compact('features'));
+        $problems = ProblemLand3::all();
+        return view('admin.landpages.land3.problems.index', compact('problems'));
     }
 
     /**
@@ -24,7 +22,7 @@ class AdminFeaturesLand1Controller extends Controller
      */
     public function create()
     {
-        return view("admin.landpages.land1.features.create");
+        return view('admin.landpages.land3.problems.create');
     }
 
     /**
@@ -36,22 +34,20 @@ class AdminFeaturesLand1Controller extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        $feature = new FeatureLandOne();
-        $feature->title = $request->input('title');
-        $feature->save();
+        $problem = new ProblemLand3();
+        $problem->title = $request->input('title');
+        $problem->save();
 
-        return redirect()->route('admin.features.index')->with('success', 'تمت إضافة  بنجاح');
+        return redirect()->route('admin.problems-3.index')->with('success', 'تمت إضافة المشكلة بنجاح');
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        $feature = FeatureLandOne::findOrFail($id);
-        return view('admin.landpages.land1.features.edit', compact('feature'));
+        $problem = ProblemLand3::findOrFail($id);
+        return view('admin.landpages.land3.problems.edit', compact('problem'));
     }
 
     /**
@@ -63,22 +59,20 @@ class AdminFeaturesLand1Controller extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        $feature = FeatureLandOne::findOrFail($id);
-        $feature->title = $request->input('title');
-        $feature->save();
+        $problem = ProblemLand3::findOrFail($id);
+        $problem->title = $request->input('title');
+        $problem->save();
 
-        return redirect()->route('admin.features.index')->with('success', 'تمت تحديث  بنجاح');
+        return redirect()->route('admin.problems-3.index')->with('success', 'تمت تحديث المشكلة بنجاح');
     }
-
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $feature = FeatureLandOne::findOrFail($id);
+        $problem = ProblemLand3::findOrFail($id);
 
-        $feature->delete();
+        $problem->delete();
 
         return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
