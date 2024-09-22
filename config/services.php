@@ -34,6 +34,7 @@ return [
         'secret_key' => env('THAWANI_SECRET_KEY'),
         'publishable_key' => env('THAWANI_PUBLISHABLE_KEY'),
         'mode' => 'test',
+        // 'mode' => 'payment',
     ],
 
 ];

@@ -23,7 +23,6 @@ return new class extends Migration
             $table->foreignId('course_id')->nullable()->default(null)->constrained('courses')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('product_id')->nullable()->default(null)->constrained('products')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
-            // $table->string('customer_id');
         });
     }
 
