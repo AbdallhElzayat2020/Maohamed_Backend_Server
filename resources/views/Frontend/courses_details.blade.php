@@ -19,7 +19,7 @@
                     </div>
                     <div class="banner-button d-flex align-items-center">
                         <a class="demo text-decoration-none" href="{{ route('payment.create', ['id' => $course->id]) }}">
-                            <span class="mx-1">سعر الكورس$</span> {{ $course->price }} </a>
+                            <span class="mx-1">سعر الكورس OM</span> {{ $course->price }} </a>
                     </div>
                 </div>
             </div>

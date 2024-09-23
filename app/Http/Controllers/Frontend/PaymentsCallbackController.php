@@ -28,20 +28,21 @@ class PaymentsCallbackController extends Controller
         $client = new Thawani(
             config('services.thawani.secret_key'),
             config('services.thawani.publishable_key'),
-            'test',
+            'payment',
         );
 
         try {
             $response = $client->getCheckoutSession($session_id);
             if ($response['data']['payment_status'] == 'paid') {
-                if(isset($response['data']['metadata']['product_id']) ){
+                if (isset($response['data']['metadata']['product_id'])) {
 
                     $payment->product_id = $response['data']['metadata']['product_id'];
                     $payment->course_id = null;
-                }else{
+                } else {
                     $payment->course_id = $response['data']['metadata']['course_id'];
                     $payment->product_id = null;
                 }
+
                 $payment->status = 'successful';
 
                 $payment->save();
@@ -71,8 +72,9 @@ class PaymentsCallbackController extends Controller
 
         $payment->status = 'failed';
         $payment->save();
-        dd('failed');
 
-        // return redirect()->route('home')->with('error', 'Payment failed Contact Support');
+        return redirect()->route('home')->with('error', 'Payment failed Contact Support');
     }
 }
+
+

@@ -32,7 +32,7 @@ class PaymentsController extends Controller
         $client = new Thawani(
             config('services.thawani.secret_key'),
             config('services.thawani.publishable_key'),
-            'test',
+            'payment',
         );
         $data = [
             'client_reference_id' => 'Test Payment 1',

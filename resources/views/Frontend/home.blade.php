@@ -3,6 +3,7 @@
 @section('front_title', 'HomePage')
 
 
+
 <!-- Start Navbar Area -->
 @include('Frontend.layouts.header')
 <!-- End Navbar Area -->
@@ -23,11 +24,11 @@
                     <div class="banner-button d-flex align-items-center">
                         <a class="demo text-decoration-none" href="{{ route('contact') }}">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
-                             class="play-btn d-flex align-items-center">
+                            class="play-btn d-flex align-items-center">
                             <a href="{{ route('courses') }}" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
-                            <a class="text-decoration-none land-btn popup-youtube" href="{{ route('courses') }}">
+                            <a class="text-decoration-none land-btn" href="{{ route('courses') }}">
                                 مشاهدة كورساتي
                             </a>
                         </div>
@@ -36,7 +37,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="banner-image">
-                    <img  src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
+                    <img src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
         <div class="row align-items-center" data-cue="slideInUp">
             <div class="col-lg-6">
                 <div class="about-image">
-                    <img  src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
+                    <img src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -213,22 +214,23 @@
             <h2>الكورسات</h2>
         </div>
         <div class="row justify-content-center" data-cues="fadeIn">
-            @foreach($courses as $key =>$course)
+            @foreach ($courses as $key => $course)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-card style-2">
                         <div class="image">
-                            <a href="{{ route('courses-details',$course->id) }}">
-                                <img style="height: 300px; width: 100%" class="img-fluid" src="{{ asset($course->image) }}"
-                                     alt="blog-image">
+                            <a href="{{ route('courses-details', $course->id) }}">
+                                <img style="height: 300px; width: 100%" class="img-fluid"
+                                    src="{{ asset($course->image) }}" alt="blog-image">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a class="text-decoration-none" href="{{route('courses-details',$course->id)}}">
-                                    {{$course->title}}
+                                <a class="text-decoration-none" href="{{ route('courses-details', $course->id) }}">
+                                    {{ $course->title }}
                                 </a>
                             </h3>
-                            <a class="read-more text-decoration-none" href="{{route('courses-details',$course->id)}}">
+                            <a class="read-more text-decoration-none"
+                                href="{{ route('courses-details', $course->id) }}">
                                 ReadMore
                                 <i class="ri-arrow-right-line"></i>
                             </a>
@@ -279,7 +281,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                               href="mailto:support@gmail.com">support@gmail.com</a>
+                                href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>
@@ -308,18 +310,18 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="name" value="{{ old('name') }}" class="form-control"
-                                   placeholder="Name">
+                                placeholder="Name">
                             @error('name')
-                            <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control"
-                                   placeholder="Email">
+                                placeholder="Email">
                             @error('email')
-                            <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -327,9 +329,9 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" value="{{ old('phone') }}" name="phone" class="form-control"
-                                   placeholder="phone">
+                                placeholder="phone">
                             @error('phone')
-                            <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -337,16 +339,16 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" value="{{ old('subject') }}" name="subject" class="form-control"
-                                   placeholder="subject">
+                                placeholder="subject">
                             @error('subject')
-                            <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <textarea class="form-control textarea" value="{{ old('message') }}" name="message"
-                              placeholder="Enter Your Comments" rows="3"></textarea>
+                        placeholder="Enter Your Comments" rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>

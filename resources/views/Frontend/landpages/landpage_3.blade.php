@@ -14,7 +14,9 @@
                 {{ $info->title }}
             </h2>
             <h2 style="line-height: 1.5" class="text-white  text-center">
-                {{ $info->sub_title }} مقابل {{ $info->price }} فقط
+                {{ $info->sub_title }} مقابل <span
+                    style="font-size: 25px;  background-color: red ; padding: 3px 8px ; border-radius: 8px">{{ $info->price }}</span>
+                فقط
             </h2>
         </div>
     </div>
@@ -23,13 +25,6 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="content d-flex align-items-center justify-content-center">
-                        {{-- <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
-                            src="https://www.youtube.com/embed/b2q5yBL4XYI?si=RLHs2LCXE8_e77It"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe> --}}
-
                         <iframe width="100%" height="700" src="https://www.youtube.com/embed/{{ $info->video_url }}"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -38,7 +33,7 @@
                     </div>
                     <div class="info d-flex align-items-center justify-content-center">
                         <div class="text text-center mt-3">
-                            <p class="text-center" style="font-size: 18px">
+                            <p class="text-center" style="font-size: 20px ; background-color: red ; padding: 5px 8px ; border-radius: 8px">
                                 استثمر في مشروعك مقابل {{ $info->price }} فقط
                             </p>
                         </div>

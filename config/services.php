@@ -30,11 +30,12 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
     'thawani' => [
         'secret_key' => env('THAWANI_SECRET_KEY'),
         'publishable_key' => env('THAWANI_PUBLISHABLE_KEY'),
-        'mode' => 'test',
-        // 'mode' => 'payment',
+        // 'mode' => 'test',
+        'mode' => 'payment',
     ],
 
 ];
